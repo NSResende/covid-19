@@ -1,5 +1,8 @@
+
+
+
 body {
-    background-color:grey;
+    background-color:white;
 }
 /* titulo */
 .principalTxt{
@@ -9,23 +12,65 @@ body {
     color: #43425D;
     margin-top: 78px;
 }
-/* botão */
-.btn{
-    font-size: 15px;
-    font-family: 'Source Sans Pro', sans-serif;
-    align-content: center;
-    text-align: center;
-    margin: auto;
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-/* posição das boxes */
-div#covidInfo{
-    position:absolute;
-    top:50%;
-    left:50%;
-    margin-top:50px;
-    margin-left:-30%;
-    left: 697px;
+.content{
+    width: 580px;
+    display: flex;
+    justify-content: space-between;
+}
 
+/* total cases */
+.TotalCases{
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: left;
+    color: #E59D23;
+    font-size: 86px;
+}
+.TotalSuspects{
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: right;
+    color: #09C6A4;
+    font-size: 86px;
+}
+
+.TotalDeaths{
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    color: #E60F0F;
+    font-size: 86px;
+}
+/* text total cases */
+.Tcases{
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    color: #43425D;
+    font-size: 28px;
+}
+
+.Tsuspects{
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    color: #43425D;
+    font-size: 28px;
+}
+
+.Tdeaths{
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    color: #43425D;
+    font-size: 28px;
+}
+
+/* posição das boxes */
+#covidInfo{
+
+}
+ul{
+    padding-left: 0;
 }
 /* boxes */
 .anotherclass{
@@ -45,6 +90,7 @@ div#covidInfo{
      flex-direction: row;
      align-items: center;
  }
+
  /* estilo estados */
  .states{
     text-align: left;
@@ -75,6 +121,7 @@ div#covidInfo{
     margin-bottom: 6px;
     font-size: 34px;
 }
+
  /* estilo cases */
  .cases{
     font-family: sans-serif;
@@ -93,6 +140,7 @@ div#covidInfo{
     margin-bottom: 6px; 
     font-size: 34px;
  }
+
  /* estilo deaths */
  .deaths{
     font-family: 'Source Sans Pro', sans-serif;
@@ -102,15 +150,16 @@ div#covidInfo{
 }
 
  /* estilo N refuses */
-.Nrefuses{
+.Nsuspects{
     color: #E59D23;
     font-family: 'Source Sans Pro', sans-serif;
     margin-top: 0;
     margin-bottom: 6px; 
     font-size: 34px;
  }
+
  /* estilo refuses */
- .refuses{
+ .suspects{
     text-align: center;
     font-family: 'Source Sans Pro', sans-serif;
     color: #43425D; 
