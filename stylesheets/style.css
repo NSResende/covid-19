@@ -1,6 +1,3 @@
-
-
-
 body {
     background-color:white;
 }
@@ -28,20 +25,20 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     text-align: left;
     color: #E59D23;
-    font-size: 86px;
+    font-size: 40px;
 }
 .TotalSuspects{
     font-family: 'Source Sans Pro', sans-serif;
     text-align: right;
     color: #09C6A4;
-    font-size: 86px;
+    font-size: 40px;
 }
 
 .TotalDeaths{
     font-family: 'Source Sans Pro', sans-serif;
     text-align: center;
     color: #E60F0F;
-    font-size: 86px;
+    font-size: 40px;
 }
 /* text total cases */
 .Tcases{
@@ -65,10 +62,6 @@ body {
     font-size: 28px;
 }
 
-/* posição das boxes */
-#covidInfo{
-
-}
 ul{
     padding-left: 0;
 }
@@ -113,13 +106,13 @@ ul{
     text-align: center;
  }
 
- /* estilo N casos */
+ /* estilo number casos */
  .Ncases{
     color: #E59D23;
     font-family: 'Source Sans Pro', sans-serif;
     margin-top: 0;
     margin-bottom: 6px;
-    font-size: 34px;
+    font-size: 20px;
 }
 
  /* estilo cases */
@@ -131,14 +124,14 @@ ul{
     margin-bottom: 0;
 }
 
- /* estilo N Deaths */
- .Ndeaths{
+ /* estilo number Deaths */
+ .Ndeaths {
     color: #E60F0F;
     text-align: center;
     font-family: 'Source Sans Pro', sans-serif;
     margin-top: 0;
     margin-bottom: 6px; 
-    font-size: 34px;
+    font-size: 20px;
  }
 
  /* estilo deaths */
@@ -149,13 +142,13 @@ ul{
     margin-bottom: 0;
 }
 
- /* estilo N refuses */
+ /* estilo number refuses */
 .Nsuspects{
-    color: #E59D23;
+    color: #09C6A4;
     font-family: 'Source Sans Pro', sans-serif;
     margin-top: 0;
     margin-bottom: 6px; 
-    font-size: 34px;
+    font-size: 20px;
  }
 
  /* estilo refuses */
