@@ -2,31 +2,40 @@
 
 (function () {
     var covidContainer = document.getElementById("covid-info");
-    var btn = document.getElementById("btn");
+    var att = [];
+    var values = att.values;
 
-    const request = new XMLHttpRequest();
-    request.open('GET', 'https://api.coronaanalytic.com/brazil');
-    request.onload = function () {
-        const data = JSON.parse(request.responseText);
-        var values = data.values;
-        renderHtml(data);
+    fetch('https://covid19-brazil-api.now.sh/api/report/v1')
+        .then(function (response) {
+            if (!response) throw new Error("error");
+            return response.json();
+        }).then(function (data) {
+            handleRequest(data.data)
+        });
 
-        function TotalSuspects(val) {
-            return values.reduce(function (elacc, el) {
-                return elacc + el.suspects;
-            }, 0);
-        }
-        function TotalDeaths(val) {
-            return values.reduce(function (elacc, el) {
-                return elacc + el.deaths;
-            }, 0);
-        }
-        function TotalCases(val) {
-            return values.reduce(function (elacc, el) {
-                return elacc + el.cases;
-            }, 0);
-        }
+    function handleRequest(data) {
+        att = data
+        renderCityData(att);
+        renderHeaderElements();
+    };
 
+    function TotalSuspects(val) {
+        return att.reduce(function (elacc, el) {
+            return elacc + el.suspects;
+        }, 0);
+    }
+    function TotalDeaths(val) {
+        return att.reduce(function (elacc, el) {
+            return elacc + el.deaths;
+        }, 0);
+    }
+    function TotalCases(val) {
+        return att.reduce(function (elacc, el) {
+            return elacc + el.cases;
+        }, 0);
+    }
+
+    function renderHeaderElements() {
         document.getElementById("content").innerHTML = `
             <div>
                 <h2 class="TotalCases">${TotalCases(values)}</h2>
@@ -39,17 +48,13 @@
             <div>
                 <h2 class="TotalSuspects">${TotalSuspects(values)}</h2>
                 <p class="Tsuspects">Suspects</p>
-            </div>`;
-
+            </div>`
     };
-    request.send();
 
-
-
-    function renderHtml(data) {
+    function renderCityData(att) {
         var htmlResult = document.getElementById('covidInfo');
         var list = document.createElement('ul');
-        data.values.forEach((el) => {
+        att.forEach((el) => {
             var item = document.createElement('li');
             item.innerHTML = `<div class="boxes">
                 <h2 class="states">${el.state}</h2>
